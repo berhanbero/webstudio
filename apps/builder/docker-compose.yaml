@@ -10,11 +10,11 @@ services:
     command: ["postgres", "-c", "log_statement=all"]
     restart: always
     environment:
-      # postgresql://user:pass@localhost:5432/webstudio
+      # postgresql://user:pass@localhost:5433/webstudio
       POSTGRES_PASSWORD: pass
       POSTGRES_DB: webstudio
       POSTGRES_USER: user
     volumes:
       - db:/var/lib/postgresql/data
     ports:
-      - ${PGPORT:-5432}:5432
+      - ${PGPORT:-5433}:5432
